@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE ibfabric SYSTEM "ibfabric.dtd">
+
+<fabric name="SCinet10" speed="QDR" width="12x" length="100m">
+	<linklist name="Mellanox-NOC-3351-qdr">
+		<port num="1" length="150m"><r_port>1</r_port><r_node>Mellanox-4125-qdr</r_node></port>
+		<port num="2" length="150m"><r_port>2</r_port><r_node>Mellanox-4125-qdr</r_node></port>
+		<port num="3"><r_port>1</r_port><r_node>Mellanox-3230-qdr</r_node></port>
+		<port num="4"><r_port>2</r_port><r_node>Mellanox-3230-qdr</r_node></port>
+
+		<port num="5" width="4x" length="1.5m"><r_port>1</r_port><r_node>ib-sm</r_node></port>
+		<port num="6" width="4x" length="2m"><r_port>1</r_port><r_node>ib-rt</r_node></port>
+	</linklist>
+
+	<linklist name="Mellanox-4125-qdr">
+		<port num="1" length="150m"><r_port>1</r_port><r_node>Mellanox-NOC-3351-qdr</r_node></port>
+		<port num="2" length="150m"><r_port>2</r_port><r_node>Mellanox-NOC-3351-qdr</r_node></port>
+
+		<port num="5" width="4x" length="50m"><r_port>-</r_port><r_node>Tyco-4413</r_node></port>
+		<port num="6" width="4x" length="50m"><r_port>-</r_port><r_node>HPC-4123</r_node></port>
+	</linklist>
+
+	<linklist name="Mellanox-3230-qdr">
+		<port num="1"><r_port>3</r_port><r_node>Mellanox-NOC-3351-qdr</r_node></port>
+		<port num="2"><r_port>4</r_port><r_node>Mellanox-NOC-3351-qdr</r_node></port>
+
+		<port num="3"><r_port>1</r_port><r_node>Mellanox-2855-qdr</r_node></port>
+		<port num="4"><r_port>2</r_port><r_node>Mellanox-2855-qdr</r_node></port>
+
+		<port num="5" length="180m"><r_port>1</r_port><r_node>Mellanox-1730-qdr</r_node></port>
+		<port num="6" length="180m"><r_port>2</r_port><r_node>Mellanox-1730-qdr</r_node></port>
+
+		<port num="7" length="180m"><r_port>1</r_port><r_node>Mellanox-2212-qdr</r_node></port>
+		<!-- Optional
+		<port num="8" length="180m"><r_port>2</r_port><r_node>Mellanox-2212-qdr</r_node></port>
+		-->
+
+		<port num="12" length="50m"><r_port>-</r_port><r_node>AMD-3119</r_node></port>
+	</linklist>
+
+	<linklist name="Mellanox-2855-qdr">
+		<port num="1"><r_port>3</r_port><r_node>Mellanox-3230-qdr</r_node></port>
+		<port num="2"><r_port>4</r_port><r_node>Mellanox-3230-qdr</r_node></port>
+		<port num="3"><r_port>-</r_port><r_node>Microsoft-2939</r_node></port>
+		<port num="4"><r_port>-</r_port><r_node>ScaleMP-3239</r_node></port>
+		<port num="5"><r_port>-</r_port><r_node>Voltaire-3139</r_node></port>
+		<port num="6"><r_port>-</r_port><r_node>IBM-2539</r_node></port>
+	</linklist>
+
+	<linklist name="Mellanox-2212-qdr">
+		<port num="1" length="180m"><r_port>7</r_port><r_node>Mellanox-3230-qdr</r_node></port>
+		<!-- Optional
+		<port num="2" length="180m"><r_port>8</r_port><r_node>Mellanox-3230-qdr</r_node></port>
+		-->
+		<port num="3" width="4x"><r_port>-</r_port><r_node>Mellanox-2422-1</r_node></port>
+		<port num="4" width="4x"><r_port>-</r_port><r_node>Mellanox-2422-2</r_node></port>
+		<port num="5" width="4x"><r_port>-</r_port><r_node>Mellanox-2422-3</r_node></port>
+		<port num="6"><r_port>-</r_port><r_node>Dell-2412</r_node></port>
+	</linklist>
+
+	<linklist name="Mellanox-1730-qdr">
+		<port num="1" length="180m"><r_port>5</r_port><r_node>Mellanox-3230-qdr</r_node></port>
+		<port num="2" length="180m"><r_port>6</r_port><r_node>Mellanox-3230-qdr</r_node></port>
+		<port num="3"><r_port>1</r_port><r_node>Mellanox-1249-qdr</r_node></port>
+		<port num="9" length="150m"><r_port>-</r_port><r_node>Colorado</r_node></port>
+		<port num="10" width="4x"><r_port>-</r_port><r_node>Avago-1328-1</r_node></port>
+		<port num="11" width="4x"><r_port>-</r_port><r_node>Avago-1328-2</r_node></port>
+		<port num="12" width="4x"><r_port>-</r_port><r_node>Avago-1328-3</r_node></port>
+	</linklist>
+
+	<linklist name="Mellanox-1249-qdr">
+		<port num="1"><r_port>3</r_port><r_node>Mellanox-1730-qdr</r_node></port>
+		<port num="6"><r_port>-</r_port><r_node>IBTA-1161</r_node></port>
+	</linklist>
+
+</fabric>
+
